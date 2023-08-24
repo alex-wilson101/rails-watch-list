@@ -1,0 +1,32 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <i class="fa-solid fa-ticket"></i>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "My lists", lists_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New list", new_list_path, class: "nav-link" %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://legacybox.com/cdn/shop/articles/LBFilmReel_1024x1024.jpg?v=1563402798);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+<div class="d-flex justify-content-center p-3">
+  <div class="form-container border border-1">
+    <%= simple_form_for @bookmark do |f| %>
+      <%= f.input :comment %>
+      <%= f.association :movie %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
